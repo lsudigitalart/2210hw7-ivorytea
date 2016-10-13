@@ -3,8 +3,8 @@ var mySound;
 var prince;
 var princeStill;
 var foomin;
-var ball;
-var foominX = 650;
+// var ball;
+var foominX = 500;
 var foominY = 350;
 var fDir = 1;
 
@@ -14,7 +14,7 @@ function preload()
   prince = loadAnimation("assets/prince_001.png", "assets/prince_002.png");
   foomin = loadAnimation("assets/foomin_001.png", "assets/foomin_012.png");
   princeStill = loadImage("assets/princeStill.png");
-  ball = loadImage("assets/ball.png");
+  // ball = loadImage("assets/ball.png");
 }
 
 function setup()
@@ -43,33 +43,39 @@ function draw()
     animation(prince, width/2, height/2);
   }
 
-  while(timer > 16000)
-  {
-    image(ball, random, random);
-  }
+
+  // if (timer > 27000)
+  // {
+  //   image (ball, random, random);
+  // }
 
   //direction of foomin translating
-  if(foominX > 600)
-  {
-    fDir = 0; //go left
-  }
-  else if (foominX < 50)
-  {
-    fDir = 1; //go right
-  }
+  // if(foominX > 600)
+  // {
+  //   fDir = 0; //go left
+  // }
+  // else if (foominX < 50)
+  // {
+  //   fDir = 1; //go right
+  // }
+  //
+  // if(timer > 27000)
+  // {
+  //   animation(foomin, foominX, foominY);
+  //
+  //   if (fDir == 0)
+  //   {
+  //     foominX++;
+  //   }
+  //   if (fDir == 1)
+  //   {
+  //     foominX = foominX - 1;
+  //   }
+  // }
 
   if(timer > 27000)
   {
-    animation(foomin, foominX, foominY);
-    
-    if (fDir == 0)
-    {
-      foominX++;
-    }
-    if (fDir == 1)
-    {
-      foominX--;
-    }
+    animation(foomin, random(1, 640), random(1, 480));
   }
 
 }
